@@ -2,50 +2,52 @@
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/d5e6d734-694f-4cc8-8a07-cd591a52b99a" />
 
-Bu repository, Go dilinde Binary Tree (İkili Ağaç) gezinme algoritmalarının implementasyonlarını içerir.
+# Binary Tree Traversal Implementations in Go
 
-## İçerik
+This repository contains implementations of Binary Tree traversal algorithms in Go.
 
-Binary Tree traversal için 4 temel yöntem implement edilmiştir:
+## Contents
 
-### 1. Preorder Traversal (Ön Sıralı)
-**Sıra:** Root → Left → Right
+Four fundamental methods for Binary Tree traversal are implemented:
 
-Önce kök node ziyaret edilir, sonra sol alt ağaç, en son sağ alt ağaç gezilir.
+### 1. Preorder Traversal
+**Order:** Root → Left → Right
 
-**Kullanım Alanları:**
-- Ağaç kopyalama
-- Prefix expression oluşturma
+The root node is visited first, then the left subtree, and finally the right subtree.
 
-### 2. Inorder Traversal (İç Sıralı)
-**Sıra:** Left → Root → Right
+**Use Cases:**
+- Tree copying
+- Creating prefix expressions
 
-Önce sol alt ağaç, sonra kök node, en son sağ alt ağaç ziyaret edilir.
+### 2. Inorder Traversal
+**Order:** Left → Root → Right
 
-**Kullanım Alanları:**
-- Binary Search Tree'de sıralı liste elde etme
-- BST'de elemanları küçükten büyüğe yazdırma
+The left subtree is visited first, then the root node, and finally the right subtree.
 
-### 3. Postorder Traversal (Son Sıralı)
-**Sıra:** Left → Right → Root
+**Use Cases:**
+- Getting sorted list from Binary Search Tree
+- Printing BST elements in ascending order
 
-Önce her iki alt ağaç gezilir, en son kök node ziyaret edilir.
+### 3. Postorder Traversal
+**Order:** Left → Right → Root
 
-**Kullanım Alanları:**
-- Ağaç silme işlemleri
-- Dosya sistemi boyutu hesaplama
+Both subtrees are traversed first, and the root node is visited last.
 
-### 4. Level Order Traversal (Seviye Sıralı - BFS)
-**Sıra:** Seviye seviye, soldan sağa
+**Use Cases:**
+- Tree deletion operations
+- Calculating file system size
 
-Ağaç seviye seviye, her seviyede soldan sağa doğru gezilir.
+### 4. Level Order Traversal (BFS)
+**Order:** Level by level, left to right
 
-**Kullanım Alanları:**
-- En kısa yol bulma
-- Minimum depth hesaplama
+The tree is traversed level by level, from left to right at each level.
+
+**Use Cases:**
+- Finding shortest path
+- Calculating minimum depth
 - Breadth-First Search (BFS)
 
-## Örnek
+## Example
 ```
         1
        / \
@@ -54,25 +56,26 @@ Ağaç seviye seviye, her seviyede soldan sağa doğru gezilir.
     4   5
 ```
 
-**Çıktılar:**
+**Outputs:**
 - Preorder: `[1, 2, 4, 5, 3]`
 - Inorder: `[4, 2, 5, 1, 3]`
 - Postorder: `[4, 5, 2, 3, 1]`
 - Level Order: `[1, 2, 3, 4, 5]`
 
-## Implementasyon Detayları
+## Implementation Details
 
-- **Preorder, Inorder, Postorder:** Stack kullanarak (DFS - Depth First Search)
-- **Level Order:** Queue kullanarak (BFS - Breadth First Search)
+Both **recursive** and **iterative** implementations are provided for each traversal method.
 
-## Komplekslik
+- **Preorder, Inorder, Postorder:** Using Stack (DFS - Depth First Search)
+- **Level Order:** Using Queue (BFS - Breadth First Search)
 
-- **Zaman Karmaşıklığı:** O(n) - Her node bir kez ziyaret edilir
-- **Alan Karmaşıklığı:** O(h) - h: ağaç yüksekliği (recursive stack için)
+## Complexity
 
-## Kaynaklar
+- **Time Complexity:** O(n) - Each node is visited once
+- **Space Complexity:** O(h) - h: tree height (for recursive stack)
+
+## Resources
 
 - [LeetCode - Binary Tree Traversal Problems](https://leetcode.com/)
 - [GeeksforGeeks - Tree Traversals](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
 
----
